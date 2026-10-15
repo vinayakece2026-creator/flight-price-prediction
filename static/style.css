@@ -1,0 +1,148 @@
+
+/* ===== Global Styling ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    padding: 45px 20px;
+    color: #eaf2ff;
+    background:
+        radial-gradient(ellipse at top left, #244d82 0%, transparent 45%),
+        linear-gradient(135deg, #071426, #102c50 55%, #09182d);
+}
+
+/* ===== Main Heading ===== */
+h1 {
+    text-align: center;
+    font-size: clamp(30px, 5vw, 44px);
+    letter-spacing: -1px;
+    margin: 10px 0 12px;
+    color: #ffffff;
+}
+
+p {
+    text-align: center;
+    color: #b8cce8;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* ===== Form Card ===== */
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.97);
+    color: #172b46;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 22px;
+    box-shadow: 0 24px 65px rgba(0, 0, 0, 0.28);
+}
+
+/* ===== Labels ===== */
+label {
+    display: block;
+    margin: 0 0 9px;
+    font-size: 14px;
+    font-weight: 650;
+    color: #233d5c;
+}
+
+/* ===== Input Fields ===== */
+input,
+select {
+    display: block;
+    width: 100%;
+    padding: 13px 14px;
+    margin: 0 0 22px;
+    font-family: inherit;
+    font-size: 15px;
+    color: #203650;
+    background: #f7faff;
+    border: 1px solid #d5e0ef;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s,
+                background 0.2s;
+}
+
+input:hover,
+select:hover {
+    border-color: #8aaddb;
+}
+
+input:focus,
+select:focus {
+    background: #ffffff;
+    border-color: #3478e5;
+    box-shadow: 0 0 0 4px rgba(52, 120, 229, 0.13);
+}
+
+/* ===== Predict Button ===== */
+button {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    padding: 15px 20px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #3478f6, #1754c8);
+    border: none;
+    border-radius: 11px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(34, 94, 205, 0.25);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(34, 94, 205, 0.35);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* ===== Prediction Result ===== */
+h2 {
+    max-width: 600px;
+    margin: 25px auto 0;
+    padding: 22px;
+    text-align: center;
+    font-size: 23px;
+    color: #a7f3d0;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(110, 231, 183, 0.4);
+    border-radius: 14px;
+    overflow-wrap: anywhere;
+}
+
+/* ===== Mobile Responsive Design ===== */
+@media (max-width: 600px) {
+    body {
+        padding: 25px 14px;
+    }
+
+    form {
+        padding: 23px 18px;
+        border-radius: 16px;
+    }
+
+    input,
+    select {
+        padding: 12px;
+    }
+
+    h2 {
+        font-size: 19px;
+    }
+}

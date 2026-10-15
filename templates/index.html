@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Flight Price Prediction</h1>
+    <p>Enter your flight details below.</p>
+
+    <form action="/predict" method="POST">
+
+        <label>Airline:</label>
+        <select name="airline" required>
+            <option value="IndiGo">IndiGo</option>
+            <option value="Air India">Air India</option>
+            <option value="Jet Airways">Jet Airways</option>
+            <option value="SpiceJet">SpiceJet</option>
+            <option value="Vistara">Vistara</option>
+            <option value="GoAir">GoAir</option>
+        </select>
+        <br><br>
+
+        <label>Source:</label>
+        <select name="source" required>
+            <option value="Delhi">Delhi</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Banglore">Banglore</option>
+        </select>
+        <br><br>
+
+        <label>Destination:</label>
+        <select name="destination" required>
+            <option value="Cochin">Cochin</option>
+            <option value="Delhi">Delhi</option>
+            <option value="New Delhi">New Delhi</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Kolkata">Kolkata</option>
+        </select>
+        <br><br>
+
+        <label>Journey Date:</label>
+        <input type="date" name="journey_date" required>
+        <br><br>
+
+        <label>Departure Time:</label>
+        <input type="time" name="departure_time" required>
+        <br><br>
+
+        <label>Arrival Time:</label>
+        <input type="time" name="arrival_time" required>
+        <br><br>
+
+        <label>Total Stops:</label>
+        <select name="stops" required>
+            <option value="non-stop">Non-stop</option>
+            <option value="1 stop">1 stop</option>
+            <option value="2 stops">2 stops</option>
+            <option value="3 stops">3 stops</option>
+            <option value="4 stops">4 stops</option>
+        </select>
+        <br><br>
+
+        <label>Duration (minutes):</label>
+        <input type="number" name="duration" min="1" required>
+        <br><br>
+
+        <label>Additional Information:</label>
+        <select name="additional_info" required>
+            <option value="No info">No info</option>
+            <option value="In-flight meal not included">In-flight meal not included</option>
+            <option value="No check-in baggage included">No check-in baggage included</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Predict Flight Price</button>
+
+
+    </form>
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+
+
+</body>
+</html>
